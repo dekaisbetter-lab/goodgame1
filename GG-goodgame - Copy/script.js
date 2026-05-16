@@ -172,7 +172,6 @@ function bkGoNext1() {
     bkGoPanel('bkP1c');
     bkSetStdStepBar(2);
   } else {
-    // ps5-std: validate mode first
     if (!bk.ps5StdMode) { document.getElementById('bkPs5StdModeErr').style.display = 'block'; return; }
     bkSwitchStepBars('ps5std');
     bkGoPanel('bkP2');
@@ -337,10 +336,8 @@ function bkFormatDate(d) {
 }
 
 // ========== GOOGLE SHEETS — DOUBLE BOOKING PREVENTION ==========
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzu1ZlAl7dSLdx7N93JUELyxxzL5RxWBgSXVjGnY6CAlFKoQz6Y3wGRlyuM0mVADg/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbEB09USnNe9Go1WAob5ExzXs_H1EMVMPZPA1zWj9Pi4tKvhbmvOOuk8We8bM5Rt-J/exec';
 
-// JSONP — the only reliable way to read a response from Apps Script cross-origin.
-// Apps Script doGet must call the callback function with the result.
 function jsonp(params, timeoutMs) {
   timeoutMs = timeoutMs || 10000;
   return new Promise(function(resolve, reject) {
@@ -400,7 +397,8 @@ async function bkPay() {
   payBtn.disabled = true;
 
   try {
-    // Phase 1: check availability (JSONP gives us a readable response)
+    console.log('Checking availability...', { device: deviceName, date: bk.date, time: timeStr, hours: bk.hours, pcCount });
+
     const checkResult = await jsonp({
       action: 'check',
       device: deviceName,
@@ -410,13 +408,15 @@ async function bkPay() {
       pcCount: pcCount
     });
 
+    console.log('CHECK RESULT:', JSON.stringify(checkResult));
+
     if (!checkResult.ok) {
       alert('❌ ' + (checkResult.message || 'ეს დრო უკვე დაჯავშნულია. გთხოვთ სხვა დრო ან თარიღი აირჩიოთ.'));
       return;
     }
 
-    // Phase 2: save (server re-checks before writing to prevent race conditions)
     payBtn.textContent = '💾 ინახება...';
+
     const saveResult = await jsonp({
       action: 'book',
       name: name,
@@ -429,15 +429,16 @@ async function bkPay() {
       pcCount: pcCount
     });
 
+    console.log('SAVE RESULT:', JSON.stringify(saveResult));
+
     if (!saveResult.ok) {
       alert('❌ ' + (saveResult.message || 'ჯავშანი ვერ შეინახა — სლოტი დაიკავა. სცადეთ სხვა დრო.'));
     } else {
       alert(`✅ ჯავშანი წარმატებით შეინახა!\n\n${name}\n${phone}\n${deviceName}\n${bk.date} ${timeStr}\n${bk.hours} საათი\nსულ: ${total} ₾`);
-      // window.location.href = `https://citypay.io/pay?...`;
     }
 
   } catch (err) {
-    console.error(err);
+    console.error('BOOKING ERROR:', err);
     alert('❌ კავშირის შეცდომა: ' + err.message);
   } finally {
     payBtn.textContent = originalText;
