@@ -336,7 +336,7 @@ function bkFormatDate(d) {
 }
 
 // ========== GOOGLE SHEETS — DOUBLE BOOKING PREVENTION ==========
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbEB09USnNe9Go1WAob5ExzXs_H1EMVMPZPA1zWj9Pi4tKvhbmvOOuk8We8bM5Rt-J/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxW5xAiOMU3YS5h7aWvSnRk5ErYRU0Z73l1p5t4w_LZCcZyoKhGl9lAtIbuuBRsbMYa/exec';
 
 function jsonp(params, timeoutMs) {
   timeoutMs = timeoutMs || 10000;
