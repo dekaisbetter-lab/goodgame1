@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GoodGame</title>
+<meta name="description" content="მაღალი დონის გეიმინგ კომპიუტერები, PlayStation 5 და VIP ოთახები. დაჯავშნე ონლაინ." />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container nav">
+    <a href="#home" class="logo"><img src="gg-logo-removebg-preview.png" alt="" class="nav-logo-img" /><span class="text-primary">Good</span><span class="text-cyan">Game</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home">მთავარი</a>
+      <a href="#computers" class="nav-link" data-section="computers">კომპიუტერები</a>
+      <a href="#playstation" class="nav-link" data-section="playstation">PlayStation</a>
+      <a href="#menu" class="nav-link" data-section="menu">მენიუ</a>
+      <a href="#booking" class="nav-link" data-section="booking">ჯავშანი</a>
+      <a href="#contact" class="nav-link" data-section="contact">კონტაქტი</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <canvas id="hero-bg-canvas" class="hero-bg-canvas"></canvas>
+  <img src="gg-logo-removebg-preview.png" alt="" class="hero-bg-logo" aria-hidden="true" />
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <div class="hero-logo-wrap">
+      <div class="hero-cyberclub">CYBER CLUB</div>
+      <img src="gg-logo-removebg-preview.png" alt="GoodGame Logo" class="hero-mobile-logo" aria-hidden="true" />
+      <div class="hero-wordmark"><span class="text-primary">Good</span><span class="text-cyan">Game</span></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#booking" class="btn btn-neon">დაჯავშნე ახლავე</a>
+      <a href="#computers" class="btn btn-outline">ნახე ტექნიკა</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPUTERS -->
+<section id="computers" class="container section">
+  <div class="section-head">
+    <h2>ჩვენი <span class="text-cyan glow-cyan">კომპიუტერები</span></h2>
+  </div>
+
+  <div class="grid-2">
+    <article class="card">
+      <div class="card-img">
+        <img src="pc-vip.jpg" alt="VIP PC" loading="lazy" />
+        <span class="badge badge-primary">VIP</span>
+      </div>
+      <div class="card-body">
+        <h3>VIP კომპიუტერი</h3>
+        <p class="muted">10 ერთეული • 2 ოთახი × 5 PC</p>
+        <dl class="specs">
+          <div><dt>პროცესორი</dt><dd>Intel Core i5-13400F (4.60 GHz)</dd></div>
+          <div><dt>ვიდეობარათი</dt><dd>Colorful GeForce RTX 4060 8GB</dd></div>
+          <div><dt>ოპერატიული</dt><dd>Colorful DDR5 16GB 5600 MHz</dd></div>
+          <div><dt>მონიტორი</dt><dd>SAMSUNG 27" Odyssey G4 (240Hz)</dd></div>
+          <div class="specs-more" hidden><dt>დედაპლატა</dt><dd>Colorful Battle-AX B760M-K D5 V20</dd></div>
+          <div class="specs-more" hidden><dt>კვების ბლოკი</dt><dd>Segotep AN650W 80 Plus White</dd></div>
+          <div class="specs-more" hidden><dt>HDD</dt><dd>Toshiba 2TB Desktop</dd></div>
+          <div class="specs-more" hidden><dt>SSD</dt><dd>Colorful CN600 M.2 512GB NVMe</dd></div>
+          <div class="specs-more" hidden><dt>ქულერი</dt><dd>Segotep Frozen Tower TS4-M</dd></div>
+          <div class="specs-more" hidden><dt>მაუსი</dt><dd>Razer DeathAdder Essential</dd></div>
+          <div class="specs-more" hidden><dt>კლავიატურა</dt><dd>A4Tech Bloody WS98 Wireless Mech</dd></div>
+          <div class="specs-more" hidden><dt>სავარძელი</dt><dd>Trust GXT716 RIZZA</dd></div>
+        </dl>
+        <button class="specs-toggle" onclick="toggleSpecs(this)">მეტი</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-img">
+        <img src="pc-standard.jpg" alt="Standard PC" loading="lazy" />
+        <span class="badge badge-cyan">Standard</span>
+      </div>
+      <div class="card-body">
+        <h3>Standard PC</h3>
+        <p class="muted">6 ერთეული • საერთო სივრცე</p>
+        <dl class="specs">
+          <div><dt>პროცესორი</dt><dd>Intel Core i5-12400F</dd></div>
+          <div><dt>ვიდეობარათი</dt><dd>GeForce RTX 3050 6GB</dd></div>
+          <div><dt>ოპერატიული</dt><dd>T-Force Vulcan DDR4 16GB</dd></div>
+          <div><dt>მონიტორი</dt><dd>180Hz Gaming Display</dd></div>
+          <div class="specs-more" hidden><dt>დედაპლატა</dt><dd>ASUS PRIME H610M-K DDR4</dd></div>
+          <div class="specs-more" hidden><dt>SSD</dt><dd>Patriot P320 512GB</dd></div>
+          <div class="specs-more" hidden><dt>ქულერი</dt><dd>Thermaltake S400</dd></div>
+          <div class="specs-more" hidden><dt>კვების ბლოკი</dt><dd>Deepcool PF650</dd></div>
+          <div class="specs-more" hidden><dt>ქეისი</dt><dd>Thermaltake Cube mini 3× ARGB</dd></div>
+        </dl>
+        <button class="specs-toggle" onclick="toggleSpecs(this)">მეტი</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="card pad glow" style="margin-top:1.5rem">
+    <h3>ხელმისაწვდომი თამაშები</h3>
+    <p class="muted" style="margin-top:0.75rem">🖥️ CS2 · CS 1.6 · Fortnite · Dota 2 · Valorant · PUBG</p>
+  </div>
+</section>
+
+<!-- PS5 -->
+<section id="playstation" class="container section">
+  <div class="section-head">
+    <h2>PlayStation <span class="text-cyan glow-cyan">5</span></h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-img tall"><img src="ps5.jpg" alt="PS5 ოთახი" loading="lazy" /></div>
+    </div>
+    <div class="ps-list">
+      <div class="card pad">
+        <div class="row-between">
+          <h3>საერთო სივრცე</h3>
+          <span class="pill pill-cyan">4 PS5</span>
+        </div>
+      </div>
+      <div class="card pad">
+        <div class="row-between">
+          <h3>VIP ოთახი</h3>
+          <span class="pill pill-primary">1 PS5</span>
+        </div>
+      </div>
+      <div class="card pad glow">
+        <h3>ხელმისაწვდომი თამაშები</h3>
+        <p class="muted" style="margin-top:0.75rem">🎮 FIFA 24/25/26 · UFC 4 · UFC 5 · Mortal Kombat · GTA 5</p>
+        <a href="#booking" class="btn btn-neon" style="margin-top:1rem">დაჯავშნე PS5</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="container section">
+  <div class="section-head">
+    <h2>ჩვენი <span class="text-cyan glow-cyan">მენიუ</span></h2>
+  </div>
+
+  <div class="menu-photo-wrap">
+    <img src="IMG_1560.PNG" alt="GoodGame ბარი და მენიუ" class="menu-photo" loading="lazy" />
+  </div>
+
+  <div class="menu-grid">
+
+    <!-- გამაგრილებელი სასმელები -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">🥤</span>
+        <h3>გამაგრილებელი სასმელები</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>კოკა-კოლა 0.5</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>კოკა-კოლა 0.3</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>ფანტა 0.5</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>ფანტა 0.3</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>სპრაიტი</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>ცივი ჩაი</span><span class="menu-price">3.50 ₾</span></li>
+        <li><span>კაპი</span><span class="menu-price">4.00 ₾</span></li>
+        <li><span>დინამიტი</span><span class="menu-price">4.00 ₾</span></li>
+        <li><span>წყალი</span><span class="menu-price">1.00 ₾</span></li>
+      </ul>
+    </div>
+
+    <!-- SNACKS -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">🍫</span>
+        <h3>Snacks</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>Snickers / სნიკერსი</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>Bounty / ბაუნტი</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>Twix / ტვიქსი</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>Kitkat / კიტკეტი</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>Oreo / ორეო</span><span class="menu-price">3.50 ₾</span></li>
+        <li><span>M&amp;M</span><span class="menu-price">2.50 ₾</span></li>
+        <li><span>Lays დიდი / ლეისი დიდი</span><span class="menu-price">6.00 ₾</span></li>
+        <li><span>Lays პატარა / ლეისი პატარა</span><span class="menu-price">4.00 ₾</span></li>
+        <li><span>Doritos დიდი / დორიტოსი დიდი</span><span class="menu-price">6.00 ₾</span></li>
+        <li><span>Doritos პატარა / დორიტოსი პატარა</span><span class="menu-price">4.00 ₾</span></li>
+        <li><span>მიწისთხილი</span><span class="menu-price">3.50 ₾</span></li>
+        <li><span>7DAYS კრუასანი</span><span class="menu-price">6.00 ₾</span></li>
+      </ul>
+    </div>
+
+    <!-- Coffee & Tea -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">☕</span>
+        <h3>Coffee &amp; Tea</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>ყავა</span><span class="menu-price">2.00 ₾</span></li>
+        <li><span>ჩაი</span><span class="menu-price">2.00 ₾</span></li>
+      </ul>
+    </div>
+
+    <!-- ALCOHOL -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">🍸</span>
+        <h3>Alcohol</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>Martin Rosso</span><span class="menu-price">10.00 ₾</span></li>
+        <li><span>Malibu</span><span class="menu-price">10.00 ₾</span></li>
+        <li><span>Campari</span><span class="menu-price">10.00 ₾</span></li>
+        <li><span>Cointreau</span><span class="menu-price">10.00 ₾</span></li>
+        <li><span>Jägermeister</span><span class="menu-price">10.00 ₾</span></li>
+      </ul>
+    </div>
+
+    <!-- BEER -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">🍺</span>
+        <h3>Beer</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>Heineken 0.5</span><span class="menu-price">9.00 ₾</span></li>
+        <li><span>Heineken 0.3</span><span class="menu-price">7.00 ₾</span></li>
+        <li><span>ქარვა 0.5</span><span class="menu-price">6.00 ₾</span></li>
+      </ul>
+    </div>
+
+    <!-- FAST FOOD -->
+    <div class="card pad menu-category">
+      <div class="menu-cat-header">
+        <span class="menu-cat-icon">🍞</span>
+        <h3>Fast Food</h3>
+      </div>
+      <ul class="menu-list">
+        <li><span>ტოსტი</span><span class="menu-price">4.00 ₾</span></li>
+        <li><span>ტოსტი ორმაგი</span><span class="menu-price">6.00 ₾</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING — multi-step widget -->
+<section id="booking" class="container section">
+  <div class="section-head">
+    <h2>ონლაინ <span class="text-cyan glow-cyan">ჯავშანი და გადახდა</span></h2>
+    <p class="muted" style="margin-top:.6rem">
+    <a href="https://maps.app.goo.gl/gXzsgKDmSLXwsjZu7" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:underline">134 Pushkin St, Batumi</a></p>
+  </div>
+ 
+  <div class="booking-widget">
+ 
+    <!-- STEPS BAR — PC flow (5 steps: device, count, time, duration, pay) -->
+    <div class="bk-steps" id="bkStepsStd">
+      <div class="bk-step active" data-step="1"><div class="bk-circle">1</div><div class="bk-label">მოწყობილობა</div></div>
+      <div class="bk-step" data-step="2"><div class="bk-circle">2</div><div class="bk-label">რაოდენობა</div></div>
+      <div class="bk-step" data-step="3"><div class="bk-circle">3</div><div class="bk-label">დრო</div></div>
+      <div class="bk-step" data-step="4"><div class="bk-circle">4</div><div class="bk-label">პაკეტი</div></div>
+      <div class="bk-step" data-step="5"><div class="bk-circle">5</div><div class="bk-label">გადახდა</div></div>
+    </div>
+    <!-- STEPS BAR — PS5 std flow (4 steps: device, time, duration, pay) -->
+    <div class="bk-steps" id="bkStepsPs5Std" style="display:none">
+      <div class="bk-step active" data-pstep="1"><div class="bk-circle">1</div><div class="bk-label">მოწყობილობა</div></div>
+      <div class="bk-step" data-pstep="2"><div class="bk-circle">2</div><div class="bk-label">დრო</div></div>
+      <div class="bk-step" data-pstep="3"><div class="bk-circle">3</div><div class="bk-label">პაკეტი</div></div>
+      <div class="bk-step" data-pstep="4"><div class="bk-circle">4</div><div class="bk-label">გადახდა</div></div>
+    </div>
+    <!-- STEPS BAR — PS5 VIP flow (5 steps) -->
+    <div class="bk-steps" id="bkStepsVip" style="display:none">
+      <div class="bk-step active" data-vstep="1"><div class="bk-circle">1</div><div class="bk-label">მოწყობილობა</div></div>
+      <div class="bk-step" data-vstep="2"><div class="bk-circle">2</div><div class="bk-label">რამდენი?</div></div>
+      <div class="bk-step" data-vstep="3"><div class="bk-circle">3</div><div class="bk-label">დრო</div></div>
+      <div class="bk-step" data-vstep="4"><div class="bk-circle">4</div><div class="bk-label">პაკეტი</div></div>
+      <div class="bk-step" data-vstep="5"><div class="bk-circle">5</div><div class="bk-label">გადახდა</div></div>
+    </div>
+ 
+    <!-- STEP 1: Device -->
+    <div class="bk-panel active" id="bkP1">
+      <h3 class="bk-title">აირჩიე <span>მოწყობილობა</span></h3>
+      <div class="bk-dev-grid">
+        <div class="bk-dev-card sel" data-dev="pc-std" onclick="bkSelDev(this)">
+          <div class="bk-dev-icon">🖥️</div>
+          <div class="bk-dev-name">PC</div>
+          <div class="bk-dev-sub">საერთო სივრცე</div>
+          <div class="bk-dev-price">5<small>₾/სთ</small></div>
+        </div>
+        <div class="bk-dev-card" data-dev="ps5-std" onclick="bkSelDev(this)">
+          <div class="bk-dev-icon">🎮</div>
+          <div class="bk-dev-name">PlayStation 5</div>
+          <div class="bk-dev-sub">საერთო სივრცე</div>
+          <div class="bk-dev-price">5–10<small>₾/სთ</small></div>
+        </div>
+        <div class="bk-dev-card" data-dev="pc-vip" onclick="bkSelDev(this)">
+          <div class="bk-dev-icon">💻</div>
+          <div class="bk-dev-name">VIP PC <span class="bk-vip">VIP</span></div>
+          <div class="bk-dev-sub">VIP ოთახი</div>
+          <div class="bk-dev-price">7<small>₾/სთ</small></div>
+        </div>
+        <div class="bk-dev-card" data-dev="ps5-vip" onclick="bkSelDev(this)">
+          <div class="bk-dev-icon">🎮</div>
+          <div class="bk-dev-name">PS5 VIP <span class="bk-vip">VIP</span></div>
+          <div class="bk-dev-sub">VIP ოთახი</div>
+          <div class="bk-dev-price">10–15<small>₾/სთ</small></div>
+        </div>
+      </div>
+      <!-- VIP mode picker — visible only when PS5 VIP is selected -->
+      <div id="bkVipModeWrap" style="display:none;margin-top:1.25rem">
+        <h4 class="bk-sub-title">რეჟიმი — <span>1v1 თუ 2v2?</span></h4>
+        <div class="bk-vip-mode-row">
+          <button class="bk-vip-mode-btn" onclick="bkSelVipMode(this,'1v1')">🕹️ 1v1<br/><small>10 ₾/სთ</small></button>
+          <button class="bk-vip-mode-btn" onclick="bkSelVipMode(this,'2v2')">🎮🎮 2v2<br/><small>15 ₾/სთ</small></button>
+        </div>
+        <p class="bk-err" id="bkVipModeErr">გთხოვთ აირჩიოთ 1v1 ან 2v2</p>
+      </div>
+      <!-- STD PS5 mode picker — visible only when PS5 Std is selected -->
+      <div id="bkPs5StdModeWrap" style="display:none;margin-top:1.25rem">
+        <h4 class="bk-sub-title">რეჟიმი — <span>1v1 თუ 2v2?</span></h4>
+        <div class="bk-vip-mode-row">
+          <button class="bk-vip-mode-btn" onclick="bkSelPs5StdMode(this,'1v1')">🕹️ 1v1<br/><small>5 ₾/სთ</small></button>
+          <button class="bk-vip-mode-btn" onclick="bkSelPs5StdMode(this,'2v2')">🎮🎮 2v2<br/><small>10 ₾/სთ</small></button>
+        </div>
+        <p class="bk-err" id="bkPs5StdModeErr">გთხოვთ აირჩიოთ 1v1 ან 2v2</p>
+      </div>
+      <div class="bk-nav" style="justify-content:flex-end">
+        <button class="btn btn-neon" onclick="bkGoNext1()">შემდეგი →</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 1C (PC only): PC Count -->
+    <div class="bk-panel" id="bkP1c">
+      <h3 class="bk-title">რამდენი <span>კომპიუტერი</span> გინდა?</h3>
+      <div class="bk-group-grid" id="bkPcCountGrid"></div>
+      <p class="bk-err" id="bkPcCountErr">გთხოვთ აირჩიოთ კომპიუტერის რაოდენობა</p>
+      <div class="bk-nav">
+        <button class="btn btn-outline" onclick="bkGoPanel('bkP1'); bkSwitchStepBars('pc'); bkSetStdStepBar(1)">← უკან</button>
+        <button class="btn btn-neon" onclick="bkGoPcCount()">შემდეგი →</button>
+      </div>
+    </div>
+
+    <!-- STEP 1B (VIP only): Group size -->
+    <div class="bk-panel" id="bkP1b">
+      <h3 class="bk-title">რამდენი კაცი <span>მოდიხართ?</span></h3>
+      <div class="bk-group-grid" id="bkGroupGrid"></div>
+      <p class="bk-err" id="bkGroupErr">გთხოვთ აირჩიოთ ხალხის რაოდენობა</p>
+      <div class="bk-nav">
+        <button class="btn btn-outline" onclick="bkGoPanel('bkP1'); bkSetVipStepBar(1)">← უკან</button>
+        <button class="btn btn-neon" onclick="bkGoGroup()">შემდეგი →</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 2: Date & Time -->
+    <div class="bk-panel" id="bkP2">
+      <h3 class="bk-title">თარიღი და <span>მოსვლის დრო</span></h3>
+      <div class="bk-date-row">
+        <label>თარიღი</label>
+        <input type="date" id="bkDate" />
+      </div>
+      <h4 class="bk-sub-title">რომელ <span>საათზე</span> მოხვალ?</h4>
+      <div class="bk-time-grid" id="bkTimeGrid"></div>
+      <p class="bk-err" id="bkTimeErr">გთხოვთ აირჩიოთ მოსვლის დრო</p>
+      <p class="bk-group-hint" id="bkGroupHint" style="display:none">💡 <strong>10+ კაცი:</strong> 18:00–00:00 შუალედში შეგიძლიათ ითამაშოთ <strong>18 ₾/სთ-ად</strong> (ნაცვლად ჩვეულებრივ ფასისა)</p>
+      <div class="bk-nav">
+        <button class="btn btn-outline" id="bkTimeBtnBack" onclick="bkTimeBack()">← უკან</button>
+        <button class="btn btn-neon" onclick="bkGo(3)">შემდეგი →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Duration -->
+    <div class="bk-panel" id="bkP3">
+      <h3 class="bk-title">სათამაშო <span>ხანგრძლივობა</span></h3>
+      <div class="bk-hour-picker">
+        <button class="bk-adj" onclick="bkAdjHours(-1)">−</button>
+        <div class="bk-hour-display">
+          <span class="bk-hour-num" id="bkHourNum">1</span>
+          <span class="bk-hour-unit">სთ</span>
+        </div>
+        <button class="bk-adj" onclick="bkAdjHours(1)">+</button>
+      </div>
+      <div class="bk-hour-meta">
+        <span class="bk-hour-price" id="bkHourPrice">5 ₾</span>
+        <span class="bk-hour-max muted" id="bkHourMax"></span>
+      </div>
+      <div class="bk-nav">
+        <button class="btn btn-outline" onclick="bkGo(2)">← უკან</button>
+        <button class="btn btn-neon" onclick="bkGo(4)">შემდეგი →</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 4: Pay -->
+    <div class="bk-panel" id="bkP4">
+      <h3 class="bk-title">შეამოწმე და <span>გადაიხადე</span></h3>
+      <div class="bk-summary">
+        <div class="bk-sum-row"><span class="muted">მოწყობილობა</span><span id="bkSumDev">—</span></div>
+        <div class="bk-sum-row" id="bkSumGroupRow" style="display:none"><span class="muted">კაცები</span><span id="bkSumGroup">—</span></div>
+        <div class="bk-sum-row" id="bkSumPcCountRow" style="display:none"><span class="muted">კომპიუტერი</span><span id="bkSumPcCount">—</span></div>
+        <div class="bk-sum-row"><span class="muted">ხანგრძლივობა</span><span id="bkSumDur">—</span></div>
+        <div class="bk-sum-row"><span class="muted">თარიღი და დრო</span><span id="bkSumDT">—</span></div>
+        <div class="bk-sum-row bk-sum-total">
+          <span>სულ გასანაღდებელი</span>
+          <span id="bkSumTotal">—</span>
+        </div>
+      </div>
+      <div class="pay-form">
+        <label>სახელი</label>
+        <input id="bkName" type="text" placeholder="შენი სახელი გვარი" />
+        <p class="bk-err" id="bkNameErr">გთხოვთ შეიყვანოთ სახელი</p>
+        <label>ტელეფონი</label>
+        <input id="bkPhone" type="tel" placeholder="+995 5XX XX XX XX" />
+        <p class="bk-err" id="bkPhoneErr">გთხოვთ შეიყვანოთ ტელეფონის ნომერი</p>
+      </div>
+      <button class="btn btn-neon" style="width:100%;margin-top:1.5rem;padding:1rem" onclick="bkPay()">გადახდა</button>
+      <div class="bk-nav" style="margin-top:1rem">
+        <button class="btn btn-outline" onclick="bkGo(3)">← შეცვლა</button>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+
+<!-- BRANCH 2 — გრიბოედოვი -->
+<section id="branch2" class="container section">
+  <div class="section-head">
+    <h2>ფილიალი <span class="text-cyan glow-cyan">№2</span></h2>
+    <p class="muted" style="margin-top:.75rem">📍 74 Griboedov Street Batumi</p>
+  </div>
+
+  <!-- PlayStation -->
+  <h3 style="font-family:'Orbitron';font-size:1.3rem;text-transform:uppercase;margin-bottom:1.25rem;color:var(--fg)">PlayStation <span class="text-cyan">5</span></h3>
+  <div class="grid-2" style="margin-bottom:2rem">
+    <div class="card pad">
+      <div class="row-between" style="margin-bottom:1rem">
+        <h3>საერთო სივრცე</h3>
+        <span class="pill pill-cyan">4 PS5</span>
+      </div>
+      <div class="branch-price-grid">
+        <div class="branch-price-item">
+          <span class="branch-mode">1v1</span>
+          <span class="branch-rate">6 <small>₾/სთ</small></span>
+        </div>
+        <div class="branch-price-item">
+          <span class="branch-mode">2×2</span>
+          <span class="branch-rate">10 <small>₾/სთ</small></span>
+        </div>
+      </div>
+    </div>
+    <div class="card pad">
+      <div class="row-between" style="margin-bottom:1rem">
+        <h3>VIP ოთახი <span class="bk-vip">VIP</span></h3>
+        <span class="pill pill-primary">2 PS5</span>
+      </div>
+      <div class="branch-price-grid">
+        <div class="branch-price-item">
+          <span class="branch-mode">1v1</span>
+          <span class="branch-rate">10 <small>₾/სთ</small></span>
+        </div>
+        <div class="branch-price-item">
+          <span class="branch-mode">2×2</span>
+          <span class="branch-rate">15 <small>₾/სთ</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pad glow">
+    <h3>ხელმისაწვდომი თამაშები — გრიბოედოვი</h3>
+    <p class="muted" style="margin-top:.75rem">🎮 NBA · Mortal Kombat · UFC 4 · UFC 5 · FIFA 25 · FIFA 26 · PES</p>
+    <p class="muted" style="margin-top:.4rem">📞 ჯავშანი: <a href="tel:+995598327127" style="color:var(--cyan)">+995 598 32 71 27</a></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container section">
+  <div class="section-head">
+    <h2>კონტაქტი</h2>
+  </div>
+
+  <div class="grid-3">
+    <a class="card pad" href="tel:+995598327127">
+      <div class="contact-icon">📞</div>
+      <div class="contact-val">+995 598 32 71 27</div>
+    </a>
+    <a class="card pad" href="mailto:info@gg.ge">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-val">info@gg.ge</div>
+    </a>
+    <div class="card pad">
+      <div class="contact-icon">📍</div>
+      <a class="contact-val"target="_blank" rel="noopener">134 Pushkin St, Batumi</a>
+      <div class="contact-val" target="_blank" rel="noopener">74 Griboedov Street Batumi</div>
+    </div>
+  </div>
+
+  <div class="card pad glow" style="margin-top:1.5rem">
+    <h3 style="text-align:center;margin-bottom:1.5rem">სამუშაო საათები</h3>
+    <div class="hours-grid">
+      <div class="hours-row"><span class="hours-day">ორშაბათი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">სამშაბათი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">ოთხშაბათი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">ხუთშაბათი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">პარასკევი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">შაბათი</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+      <div class="hours-row"><span class="hours-day">კვირა</span><span class="hours-time">12:00–06:00 / 12:00–00:00</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo"><span class="text-primary">Good</span><span class="text-cyan">Game</span></div>
+      <p class="muted small">GoodGame კიბერ კლუბი — 2 ფილიალი ბათუმში.</p>
+    </div>
+    <div>
+      <h4>ნავიგაცია</h4>
+      <ul>
+        <li><a href="#home">მთავარი</a></li>
+        <li><a href="#computers">კომპიუტერები</a></li>
+        <li><a href="#playstation">PlayStation</a></li>
+        <li><a href="#menu">მენიუ</a></li>
+        <li><a href="#booking">ჯავშანი</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>კონტაქტი</h4>
+      <ul class="muted">
+        <li>📞 +995 598 32 71 27</li>
+        <li>📍 134 Pushkin St, Batumi</li>
+        <li>📍 74 Griboedov Street Batumi</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">©<span id="year"></span> TNstudio</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ========== HERO BACKGROUND CANVAS ==========
+(function() {
+  const canvas = document.getElementById('hero-bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const W = () => canvas.width;
+  const H = () => canvas.height;
+
+  function drawGrid() {
+    const step = 48;
+    ctx.strokeStyle = 'rgba(179,71,255,0.08)';
+    ctx.lineWidth = 0.5;
+    for (let x = 0; x < W(); x += step) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H()); ctx.stroke();
+    }
+    for (let y = 0; y < H(); y += step) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W(), y); ctx.stroke();
+    }
+  }
+
+  const particles = Array.from({length: 60}, () => ({
+    x: Math.random() * 1200,
+    y: Math.random() * 900,
+    r: Math.random() * 1.8 + 0.4,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35,
+    hue: Math.random() > 0.5 ? 'rgba(179,71,255,' : 'rgba(41,231,255,',
+    alpha: Math.random() * 0.6 + 0.3
+  }));
+
+  function updateParticles() {
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W();
+      if (p.x > W()) p.x = 0;
+      if (p.y < 0) p.y = H();
+      if (p.y > H()) p.y = 0;
+    });
+  }
+
+  function drawParticles() {
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x % W(), p.y % H(), p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.hue + p.alpha + ')';
+      ctx.fill();
+    });
+  }
+
+  function drawConnections() {
+    const maxDist = 90;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < maxDist) {
+          const alpha = (1 - d / maxDist) * 0.15;
+          ctx.strokeStyle = `rgba(179,71,255,${alpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  let scanY = 0;
+  function drawScan() {
+    const grad = ctx.createLinearGradient(0, scanY - 60, 0, scanY + 60);
+    grad.addColorStop(0, 'rgba(41,231,255,0)');
+    grad.addColorStop(0.5, 'rgba(41,231,255,0.04)');
+    grad.addColorStop(1, 'rgba(41,231,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, scanY - 60, W(), 120);
+    scanY += 1.2;
+    if (scanY > H() + 60) scanY = -60;
+  }
+
+  function drawGlows(t) {
+    const pulse = 0.5 + 0.5 * Math.sin(t * 0.001);
+
+    const g1 = ctx.createRadialGradient(W()*0.5, H()*0.4, 0, W()*0.5, H()*0.4, W()*0.55);
+    g1.addColorStop(0, `rgba(179,71,255,${0.18 * pulse})`);
+    g1.addColorStop(1, 'rgba(179,71,255,0)');
+    ctx.fillStyle = g1;
+    ctx.fillRect(0, 0, W(), H());
+
+    const g2 = ctx.createRadialGradient(W()*0.15, H()*0.8, 0, W()*0.15, H()*0.8, W()*0.4);
+    g2.addColorStop(0, `rgba(41,231,255,${0.10 * pulse})`);
+    g2.addColorStop(1, 'rgba(41,231,255,0)');
+    ctx.fillStyle = g2;
+    ctx.fillRect(0, 0, W(), H());
+  }
+
+  const sparks = Array.from({length: 14}, () => ({
+    x: Math.random() * 1200, y: Math.random() * 900,
+    size: Math.random() * 10 + 5,
+    alpha: 0, life: Math.random() * 200,
+    maxLife: Math.random() * 80 + 40,
+    color: Math.random() > 0.5 ? [179,71,255] : [41,231,255]
+  }));
+
+  function hexPath(cx, cy, r) {
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 3) * i - Math.PI / 6;
+      const px = cx + r * Math.cos(a);
+      const py = cy + r * Math.sin(a);
+      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+  }
+
+  function drawSparks() {
+    sparks.forEach(s => {
+      s.life++;
+      if (s.life > s.maxLife + 60) {
+        s.x = Math.random() * W();
+        s.y = Math.random() * H();
+        s.life = 0;
+        s.maxLife = Math.random() * 80 + 40;
+        s.color = Math.random() > 0.5 ? [179,71,255] : [41,231,255];
+      }
+      const phase = s.life / s.maxLife;
+      let a = phase < 0.3 ? phase / 0.3 : phase < 0.7 ? 1 : (1 - phase) / 0.3;
+      a = Math.max(0, Math.min(1, a)) * 0.55;
+      hexPath(s.x, s.y, s.size);
+      ctx.strokeStyle = `rgba(${s.color[0]},${s.color[1]},${s.color[2]},${a})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    });
+  }
+
+  let t = 0;
+  function loop() {
+    t++;
+    ctx.fillStyle = '#050309';
+    ctx.fillRect(0, 0, W(), H());
+    drawGrid();
+    drawGlows(t);
+    drawConnections();
+    drawParticles();
+    updateParticles();
+    drawScan();
+    drawSparks();
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+</body>
+</html
